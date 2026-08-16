@@ -30,7 +30,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
   background:var(--carbon);color:var(--masa);
   font-family:var(--f-body);font-weight:400;font-size:17px;line-height:1.65;
@@ -425,18 +425,25 @@ body.menu-open .mobmenu a:nth-child(6){transition-delay:.48s}
 .socials svg{width:18px;height:18px;fill:currentColor}
 
 /* ═══════════ FOOTER ═══════════ */
-.foot{background:var(--carbon-2);padding:clamp(60px,7vw,96px) var(--pad) 34px;border-top:1px solid var(--line)}
-.foot__top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:44px;
+.foot{background:var(--carbon-2);padding:clamp(60px,7vw,96px) var(--pad) 20px;border-top:1px solid var(--line)}
+.foot__top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:44px;
   padding-bottom:48px;border-bottom:1px solid var(--line)}
 .foot__logo{height:60px;width:auto;margin-bottom:20px}
 .foot p{color:var(--ink-faint);font-size:15.5px;max-width:40ch}
 .foot h5{font-family:var(--f-util);font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--chile);margin-bottom:20px}
 .foot li{margin-bottom:11px}
+.foot li:last-child{margin-bottom:0}
 .foot li a{color:var(--ink-soft);font-size:16px;transition:color .3s,padding-left .3s}
 .foot li a:hover{color:var(--masa);padding-left:6px}
-.foot__bot{max-width:var(--maxw);margin:26px auto 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+.foot__bot{max-width:var(--maxw);margin:26px auto 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
   font-family:var(--f-util);font-size:14.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.foot__bot-end{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .foot__bot a:hover{color:var(--masa)}
+.powered-by{display:inline-flex;align-items:center;gap:.55rem;text-transform:none;letter-spacing:0;
+  font-family:var(--f-body);font-size:14px}
+.powered-by a{display:inline-flex;align-items:center;transition:opacity .25s}
+.powered-by a:hover{opacity:.85}
+.powered-by img{height:22px;width:auto;display:block}
 
 /* sticky mobile order bar */
 .orderbar{position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
