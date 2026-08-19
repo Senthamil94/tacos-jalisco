@@ -76,8 +76,10 @@ ul,ol{list-style:none}
   border-bottom:1px solid var(--line);opacity:0;transition:opacity .45s ease;z-index:-1}
 .nav.is-stuck{padding:11px var(--pad)}
 .nav.is-stuck::before{opacity:1}
-.nav__logo img{height:52px;width:auto;transition:height .45s var(--ease)}
-.nav.is-stuck .nav__logo img{height:40px}
+.nav__logo{display:grid;place-items:center;flex-shrink:0;width:96px;height:96px;padding:8px;background:#fff;border-radius:50%;overflow:hidden;transition:width .45s var(--ease),height .45s var(--ease)}
+.nav__logo img{height:80px;width:80px;object-fit:contain;display:block;transition:height .45s var(--ease),width .45s var(--ease)}
+.nav.is-stuck .nav__logo{width:76px;height:76px;padding:7px}
+.nav.is-stuck .nav__logo img{height:62px;width:62px}
 .nav__links{display:flex;gap:30px;margin-left:auto}
 .nav__links a{font-family:var(--f-util);font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
   position:relative;padding:6px 0;color:var(--ink-soft);transition:color .3s}
@@ -428,7 +430,7 @@ body.menu-open .mobmenu a:nth-child(6){transition-delay:.48s}
 .foot{background:var(--carbon-2);padding:clamp(60px,7vw,96px) var(--pad) 20px;border-top:1px solid var(--line)}
 .foot__top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:44px;
   padding-bottom:48px;border-bottom:1px solid var(--line)}
-.foot__logo{height:60px;width:auto;margin-bottom:20px}
+.foot__logo{width:134px;height:134px;object-fit:contain;margin-bottom:20px;background:#fff;padding:12px;border-radius:50%}
 .foot p{color:var(--ink-faint);font-size:15.5px;max-width:40ch}
 .foot h5{font-family:var(--f-util);font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--chile);margin-bottom:20px}
 .foot li{margin-bottom:11px}
@@ -491,6 +493,11 @@ body.menu-open .mobmenu a:nth-child(6){transition-delay:.48s}
   .fact{font-size:13.5px;padding:7px 13px}
   .specials{grid-template-columns:1fr}
   .offers{grid-template-columns:repeat(2,1fr)}
+  .nav__logo{width:80px;height:80px;padding:8px}
+  .nav__logo img{height:64px;width:64px}
+  .nav.is-stuck .nav__logo{width:66px;height:66px;padding:7px}
+  .nav.is-stuck .nav__logo img{height:52px;width:52px}
+  .foot__logo{width:108px;height:108px;padding:10px}
 }
 
 @media (prefers-reduced-motion:reduce){
